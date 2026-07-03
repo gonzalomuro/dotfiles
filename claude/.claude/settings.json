@@ -1,0 +1,8 @@
+{
+  "theme": "auto",
+  "editorMode": "vim",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/gonzalomuro/.claude/statusline-command.sh"
+  }
+}
