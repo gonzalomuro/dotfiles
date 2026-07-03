@@ -43,6 +43,9 @@ config.inactive_pane_hsb = {
 
 config.leader = { key = 'a', mods = 'CMD', timeout_milliseconds = 1000 }
 
+-- Allow remote applications to write to your local clipboard
+config.allow_passthrough_sequences = true
+
 config.keys = require 'keys'
 
 return config
