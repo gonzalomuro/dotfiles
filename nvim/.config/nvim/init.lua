@@ -9,6 +9,13 @@ vim.loader.enable()
 
 local keys = dofile(vim.fn.stdpath('config') .. '/keys.lua')
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		vim.opt_local.conceallevel = 2
+	end,
+})
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ignorecase = true
@@ -85,6 +92,51 @@ lazy.setup({
 				}
 			}
 		end
+	},
+	{
+		"saghen/blink.cmp",
+		version = "1.*",
+		opts = {
+			keymap = { 
+				preset = "super-tab", 
+				["<C-space>"] = {} ,
+				["<C-y>"] = { "show", "show_documentation", "hide_documentation" } 
+			},
+			appearance = {
+				nerd_font_variant = "mono",
+			},
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+				per_filetype = {
+					markdown = { "lsp", "path", "snippets" }
+				}
+			},
+			completion = {
+				trigger = {
+					show_on_blocked_trigger_characters = { "'", '"' },
+					show_on_x_blocked_trigger_characters = {}
+				}
+			}
+		}
+	},
+	{
+		"obsidian-nvim/obsidian.nvim",
+		version = "*",
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"saghen/blink.cmp",
+			"ibhagwan/fzf-lua",
+		},
+		opts = {
+			legacy_commands = false,
+			workspaces = {
+				{
+					name = "work",
+					path = "~/Delta",
+				}
+			}
+		}
 	},
 })
 

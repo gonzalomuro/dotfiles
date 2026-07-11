@@ -1,0 +1,11 @@
+{
+  "cssTheme": "Things",
+  "baseFontSize": 16,
+  "accentColor": "",
+  "interfaceFontFamily": "Avenir",
+  "textFontFamily": "Fira Code",
+  "baseFontSizeAction": true,
+  "showViewHeader": true,
+  "showRibbon": true,
+  "translucency": false
+}
