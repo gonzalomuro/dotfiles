@@ -134,6 +134,10 @@ lazy.setup({
 				{
 					name = "work",
 					path = "~/Delta",
+				},
+				{
+					name = "personal",
+					path = "~/personal-vault",
 				}
 			}
 		}
