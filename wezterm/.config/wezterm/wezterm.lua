@@ -13,16 +13,20 @@ wezterm.on('gui-startup', function(cmd)
   -- window:gui_window():maximize()
 end)
 
-config.color_scheme = 'Batman'
+config.front_end = 'WebGpu'
+config.color_scheme = 'Dracula'
 config.font = wezterm.font_with_fallback {
+	-- {
+	-- 	family = 'Fira Code',
+	-- 	weight = 'Light',
+	-- 	harfbuzz_features = { 'calt=0', 'cling=0', 'liga=0', 'zero', 'ss01', 'ss05', 'ss04', 'ss03' }
+	-- },
 	{
-		family = 'Fira Code',
-		weight = 'Medium',
-		harfbuzz_features = { 'calt=0', 'cling=0', 'liga=0', 'zero', 'ss01', 'ss05', 'ss04', 'ss03' }
-	},
-	'JetBrains Mono'
+		family = 'MesloLGS Nerd Font Mono',
+    weight = 'Light'
+	}
 }
-config.font_size = 14
+config.font_size = 16
 config.line_height = 1.2
 for _, path in ipairs(fish_paths) do
 	local f = io.open(path, 'r')
@@ -42,9 +46,6 @@ config.inactive_pane_hsb = {
 }
 
 config.leader = { key = 'a', mods = 'CMD', timeout_milliseconds = 1000 }
-
--- Allow remote applications to write to your local clipboard
-config.allow_passthrough_sequences = true
 
 config.keys = require 'keys'
 
