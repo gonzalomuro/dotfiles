@@ -143,7 +143,7 @@ lazy.setup({
       workspaces = {
         {
           name = "work",
-          path = "~/Delta",
+          path = "~/delta-vault",
         },
         {
           name = "personal",
