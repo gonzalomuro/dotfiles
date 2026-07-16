@@ -5,7 +5,13 @@ local keys = {
 { key = 'Enter', mods = 'SHIFT|CMD', action = act.ToggleFullScreen },
 { key = 'C', mods = 'CMD', action = act.CopyTo 'Clipboard' },
 { key = 'F', mods = 'SHIFT|CMD', action = act.Search 'CurrentSelectionOrEmptyString' },
-{ key = 'l', mods = 'LEADER', action = act.ShowDebugOverlay },
+
+-- Leader bindings
+{ key = 'd', mods = 'LEADER', action = act.ShowDebugOverlay },
+{ key = 'l', mods = 'LEADER', action = act.ActivatePaneDirection 'Right' },
+{ key = 'h', mods = 'LEADER', action = act.ActivatePaneDirection 'Left' },
+{ key = 'v', mods = 'LEADER', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
+
 { key = 'N', mods = 'SHIFT|CMD', action = act.SpawnWindow },
 { key = 'P', mods = 'SHIFT|CMD', action = act.ActivateCommandPalette },
 { key = 'V', mods = 'SHIFT|CMD', action = act.PasteFrom 'Clipboard' },
