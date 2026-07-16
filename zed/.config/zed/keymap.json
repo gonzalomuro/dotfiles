@@ -1,5 +1,12 @@
 [
   {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-Tab": "pane::ActivateNextItem",
+      "ctrl-shift-Tab": "pane::ActivatePrevItem",
+    }
+  },
+  {
     "context": "VimControl && !menu",
     "bindings": {
       "g D": "editor::GoToTypeDefinition",
@@ -32,8 +39,6 @@
       ", v": "pane::SplitVertical",
       ", b": "editor::ToggleGitBlame",
       "cmd-B": "workspace::ToggleRightDock",
-      "g t": "vim::GoToTab",
-      "g T": "vim::GoToPreviousTab",
       "g m": "vim::ToggleMarksView",
       "shift-Esc": "zed::NoAction"
     }
@@ -62,16 +67,6 @@
     "context": "Terminal",
     "bindings": {
       "cmd-t": "workspace::NewTerminal"
-    }
-  },
-  {
-    "bindings": {
-      "shift-escape": null
-    }
-  },
-  {
-    "bindings": {
-      "shift-escape": null
     }
   }
 ]
