@@ -73,8 +73,19 @@ lazy.path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 lazy.opts = {}
 
 lazy.setup({
-  { 'nvim-lualine/lualine.nvim',
-    config = function() require('lualine').setup() end
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'dracula',
+          sections = {
+            lualine_a = {'mode', 'buffers'}
+          }
+        }
+      }
+    end
   },
   { 'numToStr/Comment.nvim', lazy = false },
   { 'windwp/nvim-autopairs', event = "InsertEnter", 
